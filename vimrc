@@ -1,14 +1,11 @@
 syntax enable
 set number
 set relativenumber 
-set ruler
 set smartindent
 set backspace=indent,eol,start
 set scrolloff=5
 set sidescrolloff=5
 noremap ; :
-set colorcolumn=80
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 "Vundle stuff
 set nocompatible              " be iMproved, required
@@ -26,6 +23,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'unite.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,3 +43,15 @@ nnoremap <Leader>b :Unite -start-insert buffer<CR>
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
+"Split below and right
+set splitbelow
+set splitright
+
+set wildmenu
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=2
+
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+execute "set colorcolumn=" . join(range(81,999), ',')

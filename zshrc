@@ -21,3 +21,11 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias ls="ls -G"
 powerline-daemon -q
 . /Users/dwong/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+
+if [ -z "$TMUX" ]; then
+    figlet -f small tmux sessions
+    echo "============"
+    tmux ls
+    echo "==========="
+fi 
+
